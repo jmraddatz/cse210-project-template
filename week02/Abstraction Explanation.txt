@@ -1,0 +1,17 @@
+Explain the meaning of Abstraction.
+Highlight a benefit of Abstraction.
+Provide an application of Abstraction.
+Use a code example of Abstraction from the program you wrote. (You should copy and paste a few lines of code that demonstrate the use of the principle.)
+Thoroughly explain these concepts. (This likely cannot be done in less than 100 words.)
+Include the screenshot you took at the beginning of your team meeting.
+
+
+
+Abstraction is taking something complex and simplifying it down. We can find this all over in our daily lives. A country's flag represents all that the country stands for. A school district is a way to group several different schools together. The title of something carry's a story or a set of information behind it. Abstraction is useful because it allows people to sort through information more quickly and keep things more manageable. With programming it becomes very useful because various codes can become very complex. Having the ability to separate a program's different parts and symbolizing it with a specific function or class really helps the programmer and anyone else looking at the code to keep track of what's happening. If someone wanted to write a program to choose a recommended book based on a user's interests, the use of abstraction is helpful. In the main program you could collect what the user's interests are from a preset list. Then in a separate class you can write a program to compare the interests with different genres of books in one method. You could also another method in the same class where the program finds the highest rated books in any particular genre. All of these lines of code in the class can be reference in the main program with only a handful of key words. As an example there is a method in a Journal class that adds a journal entry to a separate text file. The code would look something like this:  
+public void AddEntry(Entry newEntry)
+    {
+        _entries.Add(newEntry);
+    } 
+Then in the main program for you can reference the AddEntry method like this: 
+userEntry.AddEntry(newEntry);
+This is a simple code, but it shows the concept of abstraction by condensing 2 lines of code into 1. Using this idea of abstraction you could convert thousands of lines of code into 1 line of code.
