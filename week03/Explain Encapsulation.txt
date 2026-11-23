@@ -1,0 +1,56 @@
+To me the word encapsulate is to put a cap or lid on each end of something. Encapsulation allows for the encapsulated object to be projected, inherit attributes, or be abstracted. A real world example is the egg yolk and egg white being encapsulated inside of a shell. The contents of the egg are protected and able to do what it needs to do. In a programming sense the principle of encapsulation helps protect your code from accidently becoming broken. In the C# language, member variables of a class are stored as public or private. Say there is a public string variable called word. The main part of the program, or a different class, could access word directly. That also means that these other classes can change word. In many circumstances word is not supposed to change. Say word stores "apple". A different part of the program may do something based on the length of the word apple. If word accidently gets changed to "banana" then the length of the word changes. That could very possibly break the program. Changing the word variable to private is one way to prevent word from changing accidently. You can then use methods or constructors within the same class as word to access word through other classes. Here is a visual example of a code to explain encapsulation. 
+
+public class Word
+{
+    private bool _isHidden;
+
+
+    public bool IsHidden()
+    {
+        return _isHidden;
+    }
+
+
+    public string GetDisplayText() //Display words in their hidden or showing state
+    {
+        if (_isHidden)
+        {
+            int count = _text.Length;
+            string underscores = "";
+
+            for (int i = 0; i < count; i++)
+            {
+                underscores += "_";
+            }
+
+            return underscores;
+
+        }
+        else
+        {
+            return _text;
+        }
+    }
+}
+
+
+public class Scripture
+{
+     List<Word> hideList = new List<Word>();	//This is inside of a method called HideRandomWords
+        foreach (Word word in _words)
+        {
+            if (!word.IsHidden())
+            {
+                hideList.Add(word);
+            }
+        } 
+
+
+
+This program uses the IsHidden method to access the variable _isHidden in the Word class. Then the code in the Scripture class calls the IsHidden method and uses the _isHidden variable to check if a word is hidden already or not. If the word is not hidden, then the word gets added to a list.
+
+
+
+
+
+

@@ -1,4 +1,4 @@
-// I added the recommended feature to only hide words that have not been hidden yet. I also added a feature to make the number of words hidden random each 
+// I added the recommended feature to only hide words that have not been hidden yet. I also added a feature to randomize the number of words hidden each 
 // time the user presses Enter.
 
 using System;
