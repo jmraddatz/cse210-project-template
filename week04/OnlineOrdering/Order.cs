@@ -1,10 +1,52 @@
-// Order
+using System;
 
-// _customer:string
-// _products:List<Product>
+public class Order
+{
+    private Customer _customer;
+    private List<Product> _products;
 
-// Order(packLabel: string, shipLabel: string)
+    public Order(Customer customer, List<Product> products)
+    {
+        _customer = customer;
+        _products = products;
+    }
 
-// Total(productCost: int, shipCost: int):int
-// PackLabel(name: string, productId: int):string
-// ShipLabel(name: string, address: string):string
+    public double Total()
+    {
+        double total = 0;
+        foreach (Product product in _products)
+        {
+            total += product.CalculateTotal();
+        }
+        if (!_customer.LiveInUsa())
+        {
+            total += 35;
+        }
+        else
+        {
+            total += 5;
+        }
+
+        return total;
+    }
+
+    public string PackLabel()
+    {
+        string label = "";
+        foreach (Product product in _products)
+        {
+            label += $"Product ID: {product.GetId()}\n";
+            label += $"Product: {product.GetName()}\n\n";
+        }
+        return label;
+    }
+
+    public string ShipLabel()
+    {
+        string label = "";
+        label += $"{_customer.GetName()}\n";
+        label += $"{_customer.GetAddress().FullAddress()}";
+
+        return label;
+    }
+}
